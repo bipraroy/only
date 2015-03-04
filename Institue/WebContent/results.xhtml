@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:body>
+	<ui:composition template="/WEB-INF/Templates/BasicTemplate.xhtml">
+		<ui:define name="content">
+			<div class="background">
+				<header id="head" class="secondary"></header>
+				<!-- container -->
+				<div class="container">
+					<ol class="breadcrumb">
+						<li><a href="index.xhtml">Home</a></li>
+						<li class="active">Results</li>
+					</ol>
+					<div class="row">
+
+						<!-- Article main content -->
+						<article class="col-sm-12 maincontent"> <header
+							class="page-header">
+						<h1 class="page-title">Results</h1>
+						</header>
+
+						<div class="col-sm-3 highlight">
+							<!-- 	<h:form id="" class="form-horizontal well"> -->
+							<div class="control-group">
+								<h3>Select Class</h3>
+								<div class="controls">
+									<h:selectOneMenu id="class" value="#" class="form-control">
+										<f:selectItem itemLabel="Select One" itemValue="" />
+										<f:selectItem itemLabel="X" itemValue="X" />
+										<f:selectItem itemLabel="XII" itemValue="XII" />
+										<f:selectItem itemLabel="Joint Entrance"
+											itemValue="Joint Entrance" />
+									</h:selectOneMenu>
+								</div>
+							</div>
+						</div>
+						<!-- </h:form> -->
+						<div class="col-sm-3 highlight">
+							<div class="control-group">
+								<h3>Select Batch</h3>
+								<div class="controls">
+									<h:selectOneMenu id="batch" value="#" class="form-control">
+										<f:selectItem itemLabel="Select One" itemValue="" />
+										<f:selectItem itemLabel="Batch 1" itemValue="Batch 1" />
+										<f:selectItem itemLabel="Batch 2" itemValue="Batch 2" />
+										<f:selectItem itemLabel="Batch 3" itemValue="Batch 3" />
+									</h:selectOneMenu>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-3 highlight">
+							<div class="control-group">
+								<h3>Exam Name</h3>
+								<div class="controls">
+									<h:selectOneMenu id="batch" value="#" class="form-control">
+										<f:selectItem itemLabel="Select One" itemValue="" />
+										<f:selectItem itemLabel="Exam-1" itemValue="Exam-1" />
+										<f:selectItem itemLabel="Exam-2" itemValue="Exam-2" />
+										<f:selectItem itemLabel="Exam-3" itemValue="Exam-3" />
+									</h:selectOneMenu>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-3 text-right highlight" style="margin-top: 9%;">
+							<input class="btn btn-action" type="submit" value="Show Result"></input>
+						</div>
+						</article>
+						<div class="col-sm-12 highlight">
+							<div class="table-responsive">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Roll</th>
+											<th>Number</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Tamal Kanti Roy</td>
+											<td>111100123</td>
+											<td>525</td>
+										</tr>
+										<tr>
+											<td>Bipra kanti Roy</td>
+											<td>11100121</td>
+											<td>520</td>
+										</tr>
+										<tr>
+											<td>Krishnendu Ghosal</td>
+											<td>11100122</td>
+											<td>500</td>
+										</tr>
+										<tr>
+											<td>Sourav Bhattyacharjee</td>
+											<td>11100124</td>
+											<td>490</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--End of Article & main content -->
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

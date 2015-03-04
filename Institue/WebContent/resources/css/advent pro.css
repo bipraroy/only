@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Advent Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Advent Pro ExtraLight'), local('AdventPro-ExtraLight'), url(http://fonts.gstatic.com/s/adventpro/v4/URTSSjIp0Wr-GrjxFdFWnKEWXqnGSfwnQD3YDlprsb0.woff2) format('woff2'), url(http://fonts.gstatic.com/s/adventpro/v4/URTSSjIp0Wr-GrjxFdFWnBp4ivTFcMoDJtPEqAe9hmM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Advent Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Advent Pro Regular'), local('AdventPro-Regular'), url(http://fonts.gstatic.com/s/adventpro/v4/rT9jpj7pBpZV6AmssbZKk_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2'), url(http://fonts.gstatic.com/s/adventpro/v4/rT9jpj7pBpZV6AmssbZKkxsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
+}
+@font-face {
+  font-family: 'Advent Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Advent Pro Bold'), local('AdventPro-Bold'), url(http://fonts.gstatic.com/s/adventpro/v4/M4I6QiICt-ey_wZTpR2gK4WiMMZ7xLd792ULpGE4W_Y.woff2) format('woff2'), url(http://fonts.gstatic.com/s/adventpro/v4/M4I6QiICt-ey_wZTpR2gKwFhaRv2pGgT5Kf0An0s4MM.woff) format('woff');
+}

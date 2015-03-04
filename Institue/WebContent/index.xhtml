@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/Templates/BasicTemplate.xhtml">
+	
+	<ui:define name="content">
+		<div class="background">
+	<section id="main-slider" class="no-margin">
+		<div class="carousel slide">
+			<ol class="carousel-indicators">
+				<li data-target="#main-slider" data-slide-to="0" class="active"></li>
+				<li data-target="#main-slider" data-slide-to="1"></li>
+				<li data-target="#main-slider" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<h:panelGrid class="item active">
+					<img src="./resources/images/cover1.jpg" alt="..." height="600px"
+						width="1500px" />
+					<div class="carousel-caption">
+						<h2 class="thin">Technique Based Study In Chemistry, By
+							Sabyasachi Sir</h2>
+						<p class="text-muted">“The meeting of two personalities is
+							like the contact of two chemical substances: if there is any
+							reaction, both are transformed.”</p>
+						<h2 />
+					</div>
+				</h:panelGrid>
+				<h:panelGrid class="item">
+					<img src="./resources/images/cover3.jpg" alt="..." height="600px"
+						width="1500px" />
+					<div class="carousel-caption">
+						<h2 class="thin">Technique Based Study In Chemistry, By
+							Sabyasachi Sir</h2>
+						<p class="text-muted">“The meeting of two personalities is
+							like the contact of two chemical substances: if there is any
+							reaction, both are transformed.”</p>
+						<h2 />
+					</div>
+				</h:panelGrid>
+				<h:panelGrid class="item">
+					<img src="./resources/images/cover4.jpg" alt="..." height="600px"
+						width="1500px" />
+					<div class="carousel-caption">
+						<h2 class="thin">Technique Based Study In Chemistry, By
+							Sabyasachi Sir</h2>
+						<p class="text-muted">“The meeting of two personalities is
+							like the contact of two chemical substances: if there is any
+							reaction, both are transformed.”</p>
+						<h2 />
+					</div>
+				</h:panelGrid>
+			</div>
+		</div>
+		</section>
+		<!-- Highlights - jumbotron -->
+		<div class="jumbotron top-space">
+			<div class="container">
+
+				<h3 class="text-center thin">Welcome to the world of Technique based study in chemistry</h3>
+
+				<div class="row">
+					<div class="col-md-4 col-sm-4 highlight">
+						<div class="h-caption">
+							<h4>
+								<i class="fa fa-cogs fa-5"></i>Recent Story
+							</h4>
+						</div>
+						<div class="h-body text-center">
+							 <ul style="list-style-type:square">
+ 								 	<li style="text-align: justify;">Class Xi students aquire highest marks in school</li>
+ 						 			<li style="text-align: justify;">All my students of XII holding rank in school exam.</li>
+ 						 			<li style="text-align: justify;">The mock Exam is yet to come.</li>
+ 						 			<li style="text-align: justify;">New Special course added to the course structure</li>
+ 						 			<a href="#"><p style="text-align: right;"> View More</p></a>
+							</ul> 
+						</div>
+					</div>
+					<!-- <div class="col-md-3 col-sm-6 highlight">
+						<div class="h-caption">
+							<h4>
+								<i class="fa fa-flash fa-5"></i>Boost Your Knowladge
+							</h4>
+						</div>
+						<div class="h-body text-center">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Asperiores, commodi, sequi quis ad fugit omnis cumque a libero
+								error nesciunt molestiae repellat quos perferendis numquam
+								quibusdam rerum repellendus laboriosam reprehenderit!</p>
+						</div>
+					</div> -->
+					<div class="col-md-4 col-sm-4 highlight">
+						<div class="h-caption">
+							<h4>
+								<i class="fa fa-heart fa-5"></i>Study Room
+							</h4>
+						</div>
+						<div class="h-body text-center">
+							<p>Always keep hard. The way you find the solution is important. Never left a job from any point
+							, "you start the job-you finish the job" means you have the ability</p>
+							<a href="#"><p style="text-align: right;"> View More</p></a>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 highlight">
+						<div class="h-caption">
+							<h4>
+								<i class="fa fa-smile-o fa-5"></i>Glad News
+							</h4>
+						</div>
+						<div class="h-body text-center">
+						 <ul style="list-style-type:square">
+ 								 	<li style="text-align: justify;">My fellow student Dipayan Jana scored 18th rank in WBJEE Medical</li>
+ 						 			<li style="text-align: justify;">Upamanyu Goswami- 9th Rank in HS 2013</li>
+ 						 			<a href="#"><p style="text-align: right;"> View More</p></a>
+							 </ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row  -->
+
+			</div>
+		</div>
+		<!-- /Highlights -->
+		<!-- Social links. @TODO: replace by link/instructions in template -->
+		<div class="container">
+			<div class="wrapper clearfix">
+				<!-- AddThis Button BEGIN -->
+				<div class="addthis_toolbox addthis_default_style">
+					<a class="addthis_button_facebook_like"></a> <a
+						class="addthis_button_tweet"></a> <a
+						class="addthis_button_linkedin_counter"></a> <a
+						class="addthis_button_google_plusone"></a>
+				</div>
+				<!-- AddThis Button END -->
+			</div>
+		</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

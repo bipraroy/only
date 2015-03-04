@@ -1,0 +1,8 @@
+.background{
+	background-image: url("../resources/images/texture2.jpeg");
+	background-size: contain;
+}
+.background-footer{
+	background-image: url("../resources/images/back_footer.jpg");
+	bacground-size: contain;
+}

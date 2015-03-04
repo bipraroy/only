@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/Templates/BasicTemplate.xhtml">
+	<ui:define name="content">
+		<script type="text/javascript">
+			function validate() {
+				var username = document.getElementById("username").value;
+				var pwd = document.getElementById("password").value;
+				page1 = "admin/blog_management.xhtml";
+				page2 = "http://localhost/test_exam/student/profile_student.xhtml";
+				if (username == "admin") {
+					if (pwd == "123")
+						self.location.href = page1; // Redirecting to other page.
+				} else if (username == "student") {
+					if (pwd == "123")
+						self.location.href = page2; // Redirecting to other page.
+				} else {
+					alert("you are not a authenticate user");
+				}
+			};
+		</script>
+		<div class="background">
+		<header id="head" class="secondary"></header>
+
+		<!-- container -->
+		<div class="container">
+
+			<ol class="breadcrumb">
+				<li><a href="index.xhtml">Home</a></li>
+				<li class="active">User access</li>
+			</ol>
+
+			<div class="row">
+
+				<!-- Article main content -->
+				<article class="col-xs-12 maincontent"> <header
+					class="page-header">
+				<h1 class="page-title">Sign in</h1>
+				</header>
+
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3 class="thin text-center">Sign in to your account</h3>
+							<p class="text-center text-muted">
+								Login here to start technique based study, unregistered
+								students, <a href="faces/signup.xhtml">Register</a> here.
+							</p>
+							<hr />
+
+							<form name="loginform" method="post"
+								action="JavaScript:validate()">
+								<div class="top-margin">
+									<label>Username/Email <span class="text-danger">*</span></label>
+									<input id="username" name="username" type="text"
+										class="form-control" />
+								</div>
+								<div class="top-margin">
+									<label>Password <span class="text-danger">*</span></label> <input
+										id="password" name="password" type="password"
+										class="form-control" />
+								</div>
+
+								<hr />
+
+								<div class="row">
+									<div class="col-lg-8">
+										<b><a href="">Forgot password?</a></b>
+									</div>
+									<div class="col-lg-4 text-right">
+										<button class="btn btn-action" id="btn_submit" type="submit"
+											onclick="validate()">Sign in</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+
+				</article>
+				<!-- /Article -->
+
+			</div>
+		</div>
+		<!-- /container -->
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

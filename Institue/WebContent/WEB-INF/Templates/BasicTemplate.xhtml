@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Welcome</title>
+	<!-- 
+<link rel="shortcut icon" href="./resources/assets/images/gt_favicon.png" />
+<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" />
+<link rel="stylesheet" href="./resources/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="./resources/assets/css/font-awesome.min.css" />
+<link rel="stylesheet" href="./resources/assets/css/bootstrap-theme.css" media="screen" />
+<link rel="stylesheet" href="./resources/assets/css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/coin-slider.css" />
+ <link href="css/responsive.css" rel="stylesheet">
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script
+	src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="./resources/assets/js/headroom.min.js"></script>
+<script src="./resources/assets/js/jQuery.headroom.min.js"></script>
+<script src="./resources/assets/js/template.js"></script>
+
+<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+
+	<script type="text/javascript" src="js/coin-slider.min.js"></script>
+	<script src="js/prefixfree.min.js"></script>
+
+ -->
+	<h:outputStylesheet name="bootstrap.min.css" library="css" />
+	<h:outputStylesheet name="font-awesome.min.css" library="css" />
+	<h:outputStylesheet name="bootstrap-theme.css" library="css" />
+	<h:outputStylesheet name="main.css" library="css" />
+	<h:outputStylesheet name="section.css" library="css" />
+	<h:outputStylesheet name="custome.css" library="css" />
+	<h:outputStylesheet name="coin-slider.css" library="css" />
+	<h:outputStylesheet name="responsive.css" library="css" />
+	<h:outputStylesheet name="entypo.css" library="css" />
+	<h:outputStylesheet name="raleway dots.css" library="css" />
+	<h:outputStylesheet name="advent pro.css" library="css" />
+	
+	
+	<h:outputScript name="headroom.min.js" library="js" />
+	<h:outputScript name="jQuery.headroom.min.js" library="js" />
+	<h:outputScript name="template.js" library="js" />
+	<h:outputScript name="jquery.min.js" library="js" />
+	<h:outputScript name="bootstrap.min.js" library="js" />
+	<h:outputScript name="html5shiv.js" library="js" />
+	<h:outputScript name="respond.min.js" library="js" />
+	<h:outputScript name="coin-slider.min.js" library="js" />
+	<h:outputScript name="prefixfree.min.js" library="js" />
+</h:head>
+<h:body>
+	<ui:debug hotkey="x"
+		rendered="#{initParam['javax.faces.FACELETS_DEVELOPMENT']}" />
+	<div id="header">
+		<ui:insert name="header">
+			<ui:include src="/WEB-INF/Templates/header.xhtml"></ui:include>
+		</ui:insert>
+	</div>
+
+
+	<div id="content"	style="margin-bottom: 100px;">
+		<ui:insert name="content">
+	    	Content area.  See comments below this line in the source.
+	    	<!--  include your content file or uncomment the include below and create content.xhtml in this directory -->
+			<!-- <div> -->
+			<!-- <ui:include src="content.xhtml"/> -->
+			<!-- </div> -->
+		</ui:insert>
+	</div>
+
+	<div id="footer">
+		<ui:insert name="footer">
+			<ui:include src="/WEB-INF/Templates/footer.xhtml"></ui:include>
+		</ui:insert>
+	</div>
+</h:body>
+</html>

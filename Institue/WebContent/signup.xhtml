@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/Templates/BasicTemplate.xhtml">
+	<ui:define name="content">
+		<div class="background">
+		<header id="head" class="secondary"></header>
+
+	<!-- container -->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li><a href="index.xhtml">Home</a></li>
+			<li class="active">Registration</li>
+		</ol>
+
+		<div class="row">
+			
+			<!-- Article main content -->
+			<article class="col-xs-12 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Registration</h1>
+				</header>
+				
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3 class="thin text-center">Register a new account</h3>
+							<p class="text-center text-muted">Enroll here to start technique based study, registered students <a href="signin.html">Login</a> here. Admission is going on in various slots </p>
+							<hr/>
+
+							<form>
+							<div class="row top-margin">
+									<div class="col-sm-4">
+										<label>*First Name <span class="text-danger"></span></label>
+										<input type="text" class="form-control"/>
+									</div>
+									<div class="col-sm-4">
+										<label>Middle Name<span class="text-danger"></span></label>
+										<input type="text" class="form-control"/>
+									</div>
+									<div class="col-sm-4">
+										<label>Last Name<span class="text-danger"></span></label>
+										<input type="text" class="form-control"/>
+									</div>
+								</div>
+								<div class="row top-margin">
+									<div class="col-sm-6">
+										<label>*Password <span class="text-danger"></span></label>
+										<input type="text" class="form-control"/>
+									</div>
+									<div class="col-sm-6">
+										<label>Confirm Password <span class="text-danger"></span></label>
+										<input type="text" class="form-control"/>
+									</div>
+								</div>
+								<div class="top-margin">
+									<label>*Gurdian's Name</label>
+									<input type="text" class="form-control"/>
+								</div>
+								<div class="top-margin">
+									<label>Address</label>
+									<input type="text" class="form-control"/>
+								</div>
+								<div class="top-margin">
+									<label>*City <span class="text-danger"></span></label>
+									<input type="text" class="form-control"/>
+								</div>
+								<div class="top-margin">
+									<label>State <span class="text-danger"></span></label>
+									<input type="text" class="form-control"/>
+								</div>
+								<div class="row top-margin">
+									<div class="col-sm-6">
+										<label>Country <span class="text-danger"></span></label>
+										<input type="text" class="form-control"/>
+									</div>
+									<div class="col-sm-6">
+										<label>Pin <span class="text-danger"></span></label>
+										<input type="text" class="form-control"/>
+									</div>
+								</div>
+								<div class="top-margin">
+									<label>*Email Id <span class="text-danger"></span></label>
+									<input type="text" class="form-control"/>
+								</div>
+								<div class="top-margin">
+									<label>*Last Exam Result(in%)<span class="text-danger"></span></label>
+									<input type="text" class="form-control"/>
+								</div>
+								<div class="row top-margin">
+									<div class="col-sm-6">
+										<label>*Phone No <span class="text-danger"></span></label>
+										<input type="text" class="form-control"/>
+									</div>
+									<div class="col-sm-6">
+										<label>Gurdian's Phone No <span class="text-danger"></span></label>
+										<input type="text" class="form-control"/>
+									</div>
+								</div>
+								<p>* mark fields are mandatory.</p>
+
+								<hr/>
+
+								<div class="row">
+									<div class="col-lg-8">
+										<label class="checkbox">
+											<input type="checkbox"/> 
+											I've read the <a href="#">Terms and Conditions</a>
+										</label>                        
+									</div>
+									<div class="col-lg-4 text-right">
+										<button class="btn btn-action" type="submit">Register</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+				
+			</article>
+			<!-- /Article -->
+
+		</div>
+	</div>	<!-- /container -->
+	</div>
+	</ui:define>
+</ui:composition>
+</html>
