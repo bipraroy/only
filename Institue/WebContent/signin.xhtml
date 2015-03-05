@@ -54,17 +54,15 @@
 							</p>
 							<hr />
 
-							<form name="loginform" method="post"
+							<h:form name="loginform" method="post"
 								action="JavaScript:validate()">
 								<div class="top-margin">
-									<label>Username/Email <span class="text-danger">*</span></label>
-									<input id="username" name="username" type="text"
-										class="form-control" />
+									<h:outputText value="Username/Email" /><span class="text-danger">*</span>
+									<h:inputText value="#{loginBean.loginVO.userName}"/>
 								</div>
 								<div class="top-margin">
-									<label>Password <span class="text-danger">*</span></label> <input
-										id="password" name="password" type="password"
-										class="form-control" />
+									<h:outputText value="Password"/> <span class="text-danger">*</span>
+									 <h:inputText value="#{loginBean.loginVO.password}"/>
 								</div>
 
 								<hr />
@@ -74,11 +72,10 @@
 										<b><a href="">Forgot password?</a></b>
 									</div>
 									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" id="btn_submit" type="submit"
-											onclick="validate()">Sign in</button>
+										<h:commandButton value="Save" action="#{loginBean.createLogin}" />
 									</div>
 								</div>
-							</form>
+							</h:form>
 						</div>
 					</div>
 

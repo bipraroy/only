@@ -9,17 +9,50 @@ import com.VO.RegistrationVO;
 import com.util.DBHelper;
 
 public class RegistrationDAO {
-	
-	
+
+
 	public int insertStudentProfile( RegistrationVO registrationVO)
 	{
+		int result=0;
 		int statusId  = getStatusId();
 		int typeId = getTypeId();
 		int userId = insertIntoUser(registrationVO,statusId,typeId);
 		Connection con=DBHelper.getConnection();
 		PreparedStatement ps=null;
-		return 0;
-		
+		if(userId!=0){
+		String sql="insert into t_user_profile(user_id,first_name,middle_name,last_name,gurdain_name,dob,address,city,zip_code,state,country,contact_no,gurdain_contact_no,last_exam_name,last_exam_marks,board_name)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		try{
+			ps=con.prepareStatement(sql);
+			ps.setInt(1,userId);
+			ps.setString(2,registrationVO.getFirstName());
+			ps.setString(3,registrationVO.getMiddleName());
+			ps.setString(4,registrationVO.getLastName());
+			ps.setString(5,registrationVO.getGurdainName());
+			ps.setInt(6, registrationVO.getDob());
+			ps.setString(7, registrationVO.getAddress());
+			ps.setString(8, registrationVO.getCity());
+			ps.setInt(9,registrationVO.getZipCode());
+			ps.setString(10,registrationVO.getState());
+			ps.setString(11,registrationVO.getCountry());
+			ps.setInt(12,registrationVO.getContactNo());
+			ps.setInt(13,registrationVO.getGurdainContactNo());
+			ps.setString(14,registrationVO.getLastExamName());
+			ps.setString(15,registrationVO.getLastExamMarks());
+			ps.setString(16,registrationVO.getBoardName());
+			result = ps.executeUpdate();
+			System.out.println("result"+result);
+	
+		}
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
+		else{
+			System.out.println("database not created sucessesfully");
+		}
+		return result;
+
 	}
 	private int  insertIntoUser(RegistrationVO registrationVO, int statusId,
 			int typeId) {
@@ -38,14 +71,14 @@ public class RegistrationDAO {
 			ResultSet rs = ps.getGeneratedKeys();
 			if(rs.next())
 				userId = rs.getInt(1);
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("Succesfully inserted into user with userid   "+userId);
 		return userId;
-		
+
 	}
 	public int getTypeId() {
 		int typeId = 0;
@@ -64,9 +97,9 @@ public class RegistrationDAO {
 		}
 		System.out.println("Succesfully getting type_id   "+typeId);
 		return typeId;
-	
-}
-	
+
+	}
+
 	public int getStatusId() {
 		int statusId = 0;
 		Connection con = DBHelper.getConnection();
@@ -84,5 +117,5 @@ public class RegistrationDAO {
 		}
 		System.out.println("Succesfully getting status_id  "+statusId);
 		return statusId;	
-}
+	}
 }
