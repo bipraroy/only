@@ -15,7 +15,7 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="index.xhtml">Home</a></li>
+			<li><a href="index.html">Home</a></li>
 			<li class="active">Registration</li>
 		</ol>
 
@@ -34,75 +34,91 @@
 							<p class="text-center text-muted">Enroll here to start technique based study, registered students <a href="signin.html">Login</a> here. Admission is going on in various slots </p>
 							<hr/>
 
-							<form>
+							<h:form>
 							<div class="row top-margin">
 									<div class="col-sm-4">
-										<label>*First Name <span class="text-danger"></span></label>
-										<input type="text" class="form-control"/>
+										<h:outputText value="*First Name" /><span class="text-danger"></span>
+										<h:inputText value="#{registrationBean.registrationVO.firstName}" class="form-control"/>
 									</div>
 									<div class="col-sm-4">
-										<label>Middle Name<span class="text-danger"></span></label>
-										<input type="text" class="form-control"/>
+										<h:outputText value="Middle Name"/><span class="text-danger"></span>
+										<h:inputText value="#{registrationBean.registrationVO.middleName}" class="form-control"/>
 									</div>
 									<div class="col-sm-4">
-										<label>Last Name<span class="text-danger"></span></label>
-										<input type="text" class="form-control"/>
+										<h:outputText value="*Last Name"/><span class="text-danger"></span>
+										<h:inputText value="#{registrationBean.registrationVO.lastName}" class="form-control"/>
 									</div>
+								</div>
+								<div class="top-margin">
+										<h:outputText value="*Date of Birth"/> <span class="text-danger"></span>
+										<h:inputText value="#{registrationBean.registrationVO.dob}" class="form-control"/>
+			
+								</div>
+								<div class="row top-margin">
+									<div class="col-sm-7">
+									<h:outputText value="*Gurdian's Name"/>
+									<h:inputText value="#{registrationBean.registrationVO.gurdainName}" class="form-control"/>
+								</div>
+								<div class="col-sm-5">
+										<h:outputText value="*Gurdian's Contact no"/> <span class="text-danger"></span>
+										<h:inputText value="#{registrationBean.registrationVO.gurdainContactNo}" class="form-control"/>
+			
+								</div>
+								</div>
+								<div class="top-margin">
+									<h:outputText value="*Address"/>
+									<h:inputText value="#{registrationBean.registrationVO.address}" class="form-control"/>
 								</div>
 								<div class="row top-margin">
 									<div class="col-sm-6">
-										<label>*Password <span class="text-danger"></span></label>
-										<input type="text" class="form-control"/>
+									<h:outputText value="*City" /><span class="text-danger"></span>
+									<h:inputText value="#{registrationBean.registrationVO.city}" class="form-control"/>
+								</div>
+								<div class="col-sm-6">
+										<h:outputText value="*Zip code"/><span class="text-danger"></span>
+										<h:inputText value="#{registrationBean.registrationVO.zipCode}" class="form-control"/>
+									</div>
+									</div>
+								<div class="top-margin">
+									<h:outputText value="*State"/> <span class="text-danger"></span>
+									<h:inputText value="#{registrationBean.registrationVO.state}" class="form-control"/>
+								</div>
+								<div class="top-margin">
+										<h:outputText value="*Country"/> <span class="text-danger"></span>
+										<h:inputText value="#{registrationBean.registrationVO.country}" class="form-control"/>
+								</div>
+								<div class="top-margin">
+										<h:outputText value="*Contact No"/> <span class="text-danger"></span>
+										<h:inputText value="#{registrationBean.registrationVO.contactNo}" class="form-control"/>
+									</div>
+								
+								<div class="top-margin">
+									<h:outputText value="*Last Exam Name"/><span class="text-danger"></span>
+									<h:inputText value="#{registrationBean.registrationVO.lastExamName}" class="form-control"/>
+								</div>
+								<div class="top-margin">
+									<h:outputText value="*Last Exam Marks(in percentage)"/><span class="text-danger"></span>
+									<h:inputText value="#{registrationBean.registrationVO.lastExamMarks}" class="form-control"/>
+								</div>
+								<div class="top-margin">
+									<h:outputText value="*Board/University"/><span class="text-danger"></span>
+									<h:inputText value="#{registrationBean.registrationVO.boardName}" class="form-control"/>
+								</div>
+	
+								<div class="top-margin">
+									<h:outputText value="*Email Id"/><span class="text-danger"></span>
+									<h:inputText value="#{registrationBean.registrationVO.emailId}" class="form-control"/>
+								</div>
+							<div class="row top-margin">
+									<div class="col-sm-6">
+										<h:outputText value="*Password"/> <span class="text-danger"></span>
+										<h:inputText value="#{registrationBean.registrationVO.password}" class="form-control"/>
 									</div>
 									<div class="col-sm-6">
-										<label>Confirm Password <span class="text-danger"></span></label>
-										<input type="text" class="form-control"/>
+										<h:outputText value="Confirm Password"/> <span class="text-danger"></span>
+										<h:inputText value="#{registrationBean.registrationVO.confirmPassword}" class="form-control"/>
 									</div>
-								</div>
-								<div class="top-margin">
-									<label>*Gurdian's Name</label>
-									<input type="text" class="form-control"/>
-								</div>
-								<div class="top-margin">
-									<label>Address</label>
-									<input type="text" class="form-control"/>
-								</div>
-								<div class="top-margin">
-									<label>*City <span class="text-danger"></span></label>
-									<input type="text" class="form-control"/>
-								</div>
-								<div class="top-margin">
-									<label>State <span class="text-danger"></span></label>
-									<input type="text" class="form-control"/>
-								</div>
-								<div class="row top-margin">
-									<div class="col-sm-6">
-										<label>Country <span class="text-danger"></span></label>
-										<input type="text" class="form-control"/>
-									</div>
-									<div class="col-sm-6">
-										<label>Pin <span class="text-danger"></span></label>
-										<input type="text" class="form-control"/>
-									</div>
-								</div>
-								<div class="top-margin">
-									<label>*Email Id <span class="text-danger"></span></label>
-									<input type="text" class="form-control"/>
-								</div>
-								<div class="top-margin">
-									<label>*Last Exam Result(in%)<span class="text-danger"></span></label>
-									<input type="text" class="form-control"/>
-								</div>
-								<div class="row top-margin">
-									<div class="col-sm-6">
-										<label>*Phone No <span class="text-danger"></span></label>
-										<input type="text" class="form-control"/>
-									</div>
-									<div class="col-sm-6">
-										<label>Gurdian's Phone No <span class="text-danger"></span></label>
-										<input type="text" class="form-control"/>
-									</div>
-								</div>
+								</div>  
 								<p>* mark fields are mandatory.</p>
 
 								<hr/>
@@ -115,10 +131,10 @@
 										</label>                        
 									</div>
 									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit">Register</button>
+										<h:commandButton value="Save" action="#{registrationBean.createUser}" />
 									</div>
 								</div>
-							</form>
+							</h:form>
 						</div>
 					</div>
 
