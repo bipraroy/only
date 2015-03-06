@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition template="/WEB-INF/Templates/AdminTemplate.xhtml">
+	<ui:define name="content">
+		<div id="wrapper">
+			<div id="container-fluid">
+				<div class="page-header">
+					<h1>Manage Notification</h1>
+				</div>
+				<div role="tabpanel">
+					<ul class="nav nav-tabs" role="tablist" id="myTab">
+    					<li role="presentation" class="active"><a href="#new" aria-controls="new" role="tab" data-toggle="tab">Add New</a></li>
+    					<li role="presentation"><a href="#show" aria-controls="show" role="tab" data-toggle="tab">Show All</a></li>
+					</ul>
+					<div class="tab-content">						
+						<div role="tabpanel" class="tab-pane active" id="new">
+							<br />
+							<h:form class="form-horizontal well">
+								<div class="control-group">
+									<label class="control-label">Notice For:</label>
+									<div class="controls">
+										<h:selectOneMenu class="form-control notice">
+											<f:selectItem itemLabel="All" itemValue="" />
+											<f:selectItem itemLabel="Class" itemValue="class" />
+											<f:selectItem itemLabel="Batch" itemValue="batch" />
+										</h:selectOneMenu>
+									</div>
+								</div>
+
+								<div class="control-group" id="show_class">
+									<label class="control-label">Select Class:</label>
+									<div class="controls">
+										<h:selectOneMenu class="form-control">
+											<f:selectItem itemLabel="All" itemValue="" />
+											<f:selectItem itemLabel="IX" itemValue="" />
+											<f:selectItem itemLabel="X" itemValue="" />
+											<f:selectItem itemLabel="XI" itemValue="" />
+											<f:selectItem itemLabel="XII" itemValue="" />
+										</h:selectOneMenu>
+									</div>
+								</div>
+								<div class="control-group" id="show_batch">
+									<label class="control-label">Select Batch:</label>
+									<div class="controls">
+										<h:selectOneMenu class="form-control">
+											<f:selectItem itemLabel="All" itemValue="" />
+											<f:selectItem itemLabel="B-1" itemValue="" />
+											<f:selectItem itemLabel="B-2" itemValue="" />
+											<f:selectItem itemLabel="B-3" itemValue="" />
+											<f:selectItem itemLabel="B-4" itemValue="" />
+											<f:selectItem itemLabel="B-5" itemValue="" />
+											<f:selectItem itemLabel="B-6" itemValue="" />
+										</h:selectOneMenu>									
+									</div>
+								</div>
+
+
+								<div class="control-group">
+									<label class="control-label">Title:</label>
+									<div class="controls">
+										<h:inputText class="form-control" />
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Content:</label>
+									<div class="controls">
+										<h:inputTextarea class="form-control" />
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Upload Image:</label>
+									<div class="controls">
+										<h:inputFile requiredMessage="File not selected !!"/>
+									</div>
+								</div>			
+								<br />
+								<div class="action">
+									<h:button value="Publish" class="btn btn-info" />
+								</div>
+							</h:form>						
+						</div><!-- End of tabpanel new  -->
+						
+						<div role="tabpanel" class="tab-pane" id="show">
+							<br />
+							<div class="panel panel-info">
+							  <div class="panel-heading">
+							    <h3 class="panel-title">Notification 1</h3>
+							  </div>
+							  <div class="panel-body">
+							    Content Here
+							  </div>
+							</div>
+							<div class="panel panel-info">
+							  <div class="panel-heading">
+							    <h3 class="panel-title">Notification 2</h3>
+							  </div>
+							  <div class="panel-body">
+							    Content Here
+							  </div>
+							</div>
+							<div class="panel panel-success">
+							  <div class="panel-heading">
+							    <h3 class="panel-title">Notification 3</h3>
+							  </div>
+							  <div class="panel-body">
+							    Content Here
+							  </div>
+							</div>
+							<div class="panel panel-warning">
+							  <div class="panel-heading">
+							    <h3 class="panel-title">Notification 4</h3>
+							  </div>
+							  <div class="panel-body">
+							    Content Here
+							  </div>
+							</div>
+							<div class="panel panel-success">
+							  <div class="panel-heading">
+							    <h3 class="panel-title">Notification 5</h3>
+							  </div>
+							  <div class="panel-body">
+							    Content Here
+							  </div>
+							</div>
+							<div class="panel panel-warning">
+							  <div class="panel-heading">
+							    <h3 class="panel-title">Notification 6</h3>
+							  </div>
+							  <div class="panel-body">
+							    Content Here
+							  </div>
+							</div>
+				
+						</div><!-- End of tabpanel show  -->
+						
+					</div>
+				</div>	
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
