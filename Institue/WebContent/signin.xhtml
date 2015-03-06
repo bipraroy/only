@@ -5,6 +5,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
+	<h:outputStylesheet name="message.css" library="css"/>
 
 <ui:composition template="/WEB-INF/Templates/BasicTemplate.xhtml">
 	<ui:define name="content">
@@ -25,6 +26,7 @@
 				}
 			};
 		</script>
+		<h:outputStylesheet name="message.css" library="css"></h:outputStylesheet>
 		<div class="background">
 		<header id="head" class="secondary"></header>
 
@@ -54,25 +56,28 @@
 							</p>
 							<hr />
 
-							<h:form name="loginform" method="post"
-								action="JavaScript:validate()">
+							<h:form name="loginform" method="post">
 								<div class="top-margin">
 									<h:outputText value="Username/Email" /><span class="text-danger">*</span>
 									<h:inputText value="#{loginBean.loginVO.userName}"/>
 								</div>
 								<div class="top-margin">
-									<h:outputText value="Password"/> <span class="text-danger">*</span>
-									 <h:inputText value="#{loginBean.loginVO.password}"/>
+									<h:outputText value="password"/> <span class="text-danger">*</span>
+									 <h:inputSecret value="#{loginBean.loginVO.password}"/>
 								</div>
 
 								<hr />
+								<div align="center">
+									<h:message for="#{loginBean.loginVO.userName}#{loginBean.loginVO.password}" errorClass="error "/>
+								</div>
 
 								<div class="row">
 									<div class="col-lg-8">
 										<b><a href="">Forgot password?</a></b>
 									</div>
 									<div class="col-lg-4 text-right">
-										<h:commandButton value="Save" action="#{loginBean.createLogin}" />
+										<h:commandButton value="Save" action="#{loginBean.createLogin}" /><br />
+										 
 									</div>
 								</div>
 							</h:form>
