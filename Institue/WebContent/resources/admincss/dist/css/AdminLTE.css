@@ -423,9 +423,9 @@ a:focus {
     transform: translate(0, 0);
   }
 }
-.sidebar {
-  padding-bottom: 10px;
-}
+/* .sidebar {
+    padding-bottom: 150px;
+} */
 .fixed .sidebar {
   overflow: auto;
   height: 100%;
