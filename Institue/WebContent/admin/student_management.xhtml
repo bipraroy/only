@@ -13,31 +13,32 @@
 		
 		    &nbsp;
 		    <br/>
-		    <h:commandLink action="#{studentBean.retrieveStudentList(null)}">
+		    <h:commandLink action="#{studentBean.retrieveStudentList('active')}">
     					<h:graphicImage library="images" name="current.jpg"
 										url="/resources/images" height="40px;" width="250px;"/>
 					</h:commandLink>
 			&nbsp;		
-					<h:commandLink action="#{studentBean.retrieveStudentList(null)}">
+					<h:commandLink action="#{studentBean.retrieveStudentList('waiting')}">
     					<h:graphicImage library="images" name="waiting.jpg"
 										url="/resources/images" height="40px;" width="250px;"/>
 					</h:commandLink>
 					&nbsp;
-					<h:commandLink action="#{studentBean.retrieveStudentList(null)}">
+					<h:commandLink action="#{studentBean.retrieveStudentList('inactive')}">
     					<h:graphicImage library="images" name="inactive.jpg"
 										url="/resources/images" height="40px;" width="250px;"/>
 					</h:commandLink>
 		    
 					
 					<br/>
+					<h:outputLabel value="#{studentBean.headerStr}"/>
+					<br/>
 					&nbsp;<h:dataTable value="#{studentBean.currentStudList}"
 						var="currStud" border="1" id="curStudListTableId" width="80%">
 						<h:column>
 							<f:facet name="header">Registration Id</f:facet>
 							<h:commandLink
-								value="#{currStud.registrationId}"
-								action="#{studentBean.retrieveStudentList(null)}"
-								onclick="window.open('student_details.xhtml','','width=700,height=400,top=100,left=100');"
+								value="SB-CHM-#{currStud.registrationId}"
+								onclick="window.open('student_details.xhtml?regId=#{currStud.registrationId}','','width=700,top=100,left=100');"
 								immediate="true">
 								</h:commandLink>
 						</h:column>

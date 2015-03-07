@@ -3,6 +3,8 @@ package com.bean;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.VO.RegistrationVO;
 import com.VO.StudentVO;
 import com.dao.RegistrationDAO;
@@ -11,10 +13,12 @@ public class StudentBean {
 	
 	private StudentVO studentVO;
 	private List<RegistrationVO> currentStudList = new ArrayList<RegistrationVO>();
+	private String headerStr = null; 
+	private String statusChangeBtnVal = null; 
 	
 	public StudentBean() {
 		studentVO = new StudentVO();
-		currentStudList = retrieveStudentList(null);
+		retrieveStudentList("active");
 		System.out.println("Inside the student bean");
 	}
 
@@ -26,27 +30,26 @@ public class StudentBean {
 		this.studentVO = studentVO;
 	}
 	
-	public List<RegistrationVO> retrieveStudentList(String status) {
-		List<RegistrationVO> studentList = new ArrayList<RegistrationVO>();
+	public String retrieveStudentList(String status) {
 		RegistrationDAO registrationDAO = new RegistrationDAO();
-		studentList = registrationDAO.fetchStudentDetails(null);
+		int statusId;
+		if(StringUtils.equals(status, "active"))
+		{
+			statusId = 1;
+			headerStr = "LIST OF CURRENT STUDENTS";
+			statusChangeBtnVal = "Deactivate";
+		} else if (StringUtils.equals(status, "waiting")) {
+			statusId = 2;
+			headerStr = "LIST OF WAITING STUDENTS";
+			statusChangeBtnVal = "Activate";
+		}else {
+			statusId = 3;
+			headerStr = "LIST OF INACTIVE STUDENTS";
+			statusChangeBtnVal = "Activate";
+		}
+		currentStudList = registrationDAO.fetchStudentList(statusId);
 		
-		RegistrationVO vo = studentList.get(0);
-		vo.setRegistrationId("SB-CHM-111");
-		
-		studentList.clear();
-		studentList.add(vo);
-		studentList.add(vo);
-		studentList.add(vo);
-		studentList.add(vo);
-		studentList.add(vo);
-		studentList.add(vo);
-		studentList.add(vo);
-		studentList.add(vo);
-		studentList.add(vo);
-		studentList.add(vo);
-		
-		return studentList;
+		return null;
 		
 	}
 
@@ -62,6 +65,34 @@ public class StudentBean {
 	 */
 	public void setCurrentStudList(List<RegistrationVO> currentStudList) {
 		this.currentStudList = currentStudList;
+	}
+
+	/**
+	 * @return the headerStr
+	 */
+	public String getHeaderStr() {
+		return headerStr;
+	}
+
+	/**
+	 * @param headerStr the headerStr to set
+	 */
+	public void setHeaderStr(String headerStr) {
+		this.headerStr = headerStr;
+	}
+
+	/**
+	 * @return the statusChangeBtnVal
+	 */
+	public String getStatusChangeBtnVal() {
+		return statusChangeBtnVal;
+	}
+
+	/**
+	 * @param statusChangeBtnVal the statusChangeBtnVal to set
+	 */
+	public void setStatusChangeBtnVal(String statusChangeBtnVal) {
+		this.statusChangeBtnVal = statusChangeBtnVal;
 	}
 	
 
