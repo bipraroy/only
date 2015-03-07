@@ -2,6 +2,7 @@ package com.VO;
 
 public class RegistrationVO {
 
+private String registrationId;
 private int userId;
 private String firstName;
 private String middleName;
@@ -183,5 +184,19 @@ public String toString() {
 	
 	
 	
+}
+
+/**
+ * @return the registrationId
+ */
+public String getRegistrationId() {
+	return registrationId;
+}
+
+/**
+ * @param registrationId the registrationId to set
+ */
+public void setRegistrationId(String registrationId) {
+	this.registrationId = registrationId;
 }
 }

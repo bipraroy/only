@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<f:view>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+
+		<head>
+<title>Project Details...</title>
+		</head>
+		<body>
+
+			<center>
+				<br/> <br/> <h:outputText value="Project Details"
+							style="color:green; font-weight:bold" /><br/> <br/> <br/>
+									<br/> <h:form>
+											<h:dataTable value="#{studentBean.currentStudList}"
+												var="currStud" border="1" id="curStudListTableId"
+												width="80%">
+												<h:column>
+													<f:facet name="header">Registration Id</f:facet>
+													<h:commandLink value="#{currStud.registrationId}"
+														action="#{studentBean.retrieveStudentList(null)}">
+													</h:commandLink>
+												</h:column>
+												<h:column>
+													<f:facet name="header">Student Name</f:facet>
+													<h:outputLabel
+														value='#{currStud.firstName} #{currStud.middleName} #{currStud.lastName}' />
+												</h:column>
+												<h:column>
+													<f:facet name="header">Class</f:facet>
+													<h:outputLabel value='XII' />
+												</h:column>
+											</h:dataTable>
+											<br/> <br/> <br/><br/>
+															<form method="post">
+																<input type="image" src="images/close.jpg" alt="Close!"
+																	value="Close!" onclick="window.close()"></input>
+															</form>
+										</h:form>
+			</center>
+			</body>
+</f:view>
+</html>

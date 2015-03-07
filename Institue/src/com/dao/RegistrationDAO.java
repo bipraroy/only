@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.VO.RegistrationVO;
 import com.util.DBHelper;
@@ -117,5 +119,44 @@ public class RegistrationDAO {
 		}
 		System.out.println("Succesfully getting status_id  "+statusId);
 		return statusId;	
+	}
+	
+	public List<RegistrationVO> fetchStudentDetails(String status) {
+		List<RegistrationVO> studentList = new ArrayList<RegistrationVO>();
+		Connection conn = DBHelper.getConnection();
+		PreparedStatement ps = null;
+		String sql = "select * from institute_db.t_user_profile";
+		try {
+			ps = conn.prepareStatement(sql);
+			System.out.println("Prepared statement executed");
+			ResultSet rs = ps.executeQuery();
+			RegistrationVO registrationVO = null;
+			if(rs.next()) {
+				registrationVO = new RegistrationVO();
+				registrationVO.setFirstName(rs.getString("first_name"));
+				registrationVO.setMiddleName(rs.getString("middle_name"));
+				registrationVO.setLastName(rs.getString("last_name"));
+				registrationVO.setGurdainName(rs.getString("gurdain_name"));
+				registrationVO.setDob(rs.getInt("dob"));
+				registrationVO.setAddress(rs.getString("address"));
+				registrationVO.setCountry(rs.getString("country"));
+				registrationVO.setContactNo(rs.getInt("contact_no"));
+				registrationVO.setEmailId("krish@gmail.com");
+				registrationVO.setGurdainContactNo(rs.getInt("gurdain_contact_no"));
+				
+				studentList.add(registrationVO);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			//release the connection
+			try {
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return studentList;
 	}
 }
