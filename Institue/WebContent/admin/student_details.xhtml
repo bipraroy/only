@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<f:view>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+	<head>
+<title>Project Details...</title>
+	</head>
+	<body>
+
+		<center>
+			<br /> <br />
+			<h:outputText value="Student Details"
+				style="color:green; font-weight:bold" />
+			<br /> <br /> 
+			<h:form>
+				<br />
+				<br />
+				<br />
+				<br />
+				<table border="1">
+					<tr>
+						<td>Registration Id :</td>
+						<td><h:outputText
+								value="SB-CHM-#{studentActivationBean.registrationVO.registrationId}" />
+						</td>
+					</tr>
+					<tr>
+						<td>Student Name :</td>
+						<td><h:outputText
+								value="#{studentActivationBean.registrationVO.firstName} #{studentActivationBean.registrationVO.middleName} #{studentActivationBean.registrationVO.lastName}" />
+						</td>
+					</tr>
+					<tr>
+						<td>Contact No :</td>
+						<td><h:outputText
+								value="#{studentActivationBean.registrationVO.contactNo}" />
+						</td>
+					</tr>
+					<tr>
+						<td>Email Id :</td>
+						<td><h:outputText
+								value="#{studentActivationBean.registrationVO.emailId}" />
+						</td>
+					</tr>
+					<tr>
+						<td>Address :</td>
+						<td><h:outputText
+								value="#{studentActivationBean.registrationVO.address}" />
+						</td>
+					</tr>
+					<tr>
+						<td>Gurdain's Name  :</td>
+						<td><h:outputText
+								value="#{studentActivationBean.registrationVO.gurdainName}" />
+						</td>
+					</tr>
+				</table>
+				<h:commandButton action="#{studentActivationBean.statusChange}" value="#{studentActivationBean.statusChangeBtnVal}">
+					<f:param name="regId" value="#{studentActivationBean.registrationVO.registrationId}"/>
+					<f:param name="statusId" value="1"/>
+				</h:commandButton>
+			</h:form>
+		</center>
+	</body>
+</f:view>
+</html>

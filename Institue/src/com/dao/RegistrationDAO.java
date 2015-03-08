@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.lang.StringUtils;
 
 import com.VO.RegistrationVO;
 import com.util.DBHelper;
@@ -117,5 +121,109 @@ public class RegistrationDAO {
 		}
 		System.out.println("Succesfully getting status_id  "+statusId);
 		return statusId;	
+	}
+	
+	public List<RegistrationVO> fetchStudentList(int statusId) {
+		List<RegistrationVO> studentList = new ArrayList<RegistrationVO>();
+		RegistrationVO registrationVO = null;
+		Connection conn = DBHelper.getConnection();
+		PreparedStatement ps = null;
+		String sql = "select * from institute_db.t_user_profile where user_id in (select id from institute_db.t_user where status_id = ?)";
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, statusId);
+			ResultSet rs = ps.executeQuery();
+			System.out.println("Prepared statement executed");
+			while(rs.next()) {
+				registrationVO = new RegistrationVO();
+				registrationVO.setRegistrationId(rs.getInt("user_id")+"");
+				registrationVO.setFirstName(rs.getString("first_name"));
+				registrationVO.setMiddleName(rs.getString("middle_name"));
+				registrationVO.setLastName(rs.getString("last_name"));
+				registrationVO.setGurdainName(rs.getString("gurdain_name"));
+				registrationVO.setDob(rs.getInt("dob"));
+				registrationVO.setAddress(rs.getString("address"));
+				registrationVO.setCountry(rs.getString("country"));
+				registrationVO.setContactNo(rs.getInt("contact_no"));
+				registrationVO.setEmailId("krish@gmail.com");
+				registrationVO.setGurdainContactNo(rs.getInt("gurdain_contact_no"));
+				
+				studentList.add(registrationVO);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			//release the connection
+			try {
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return studentList;
+	}
+	
+	public RegistrationVO fetchStudentDetails(String regId) {
+		RegistrationVO registrationVO = null;
+		Connection conn = DBHelper.getConnection();
+		PreparedStatement ps = null;
+		String sql = "select * from institute_db.t_user_profile where user_id = ?";
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, Integer.valueOf(regId));
+			ResultSet rs = ps.executeQuery();
+			System.out.println("Prepared statement executed successfully");
+			if(rs.next()) {
+				registrationVO = new RegistrationVO();
+				
+				registrationVO.setRegistrationId(rs.getInt("user_id")+"");
+				registrationVO.setFirstName(rs.getString("first_name"));
+				registrationVO.setMiddleName(rs.getString("middle_name"));
+				registrationVO.setLastName(rs.getString("last_name"));
+				registrationVO.setGurdainName(rs.getString("gurdain_name"));
+				registrationVO.setDob(rs.getInt("dob"));
+				registrationVO.setAddress(rs.getString("address"));
+				registrationVO.setCountry(rs.getString("country"));
+				registrationVO.setContactNo(rs.getInt("contact_no"));
+				registrationVO.setEmailId("krish@gmail.com");
+				registrationVO.setGurdainContactNo(rs.getInt("gurdain_contact_no"));
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			//release the connection
+			try {
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return registrationVO;
+	}
+	
+	public void updateStudentStatus(String regId, String statusId) {
+		Connection conn = DBHelper.getConnection();
+		PreparedStatement ps = null;
+		String sql = "update institute_db.t_user set status_id = ? where id = ?";
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, Integer.valueOf(statusId));
+			ps.setInt(2, Integer.valueOf(regId));
+			int rowsUpdated = ps.executeUpdate();
+			System.out.println(rowsUpdated + "Rows updated successfully");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			//release the connection
+			try {
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }
