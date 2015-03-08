@@ -7,12 +7,10 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 <ui:composition template="/WEB-INF/Templates/AdminTemplate.xhtml">
 	<ui:define name="content">
-		<div id="wrapper">
-			<div id="container-fluid">
+		<div class="content-wrapper">
 				<div class="page-header">
 					<h1>Manage Blog</h1>
 				</div>
-				<h:inputText value="#{studentBean.studentVO.studentName}"></h:inputText>
 				<div role="tabpanel">
 					<ul class="nav nav-tabs" role="tablist" id="myTab">
     					<li role="presentation" class="active"><a href="#new" aria-controls="new" role="tab" data-toggle="tab">Add New</a></li>
@@ -161,7 +159,6 @@
 					</div>
 				</div>	
 			</div>
-		</div>
 	</ui:define>
 </ui:composition>
 </html>

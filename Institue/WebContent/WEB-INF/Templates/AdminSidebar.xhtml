@@ -6,7 +6,7 @@
 <!-- Left side column. contains the logo and sidebar -->
 <aside class="main-sidebar">
 	<!-- sidebar: style can be found in sidebar.less -->
-	<section class="sidebar" style="padding-bottom: 150px;">
+	<section class="sidebar" style="padding-bottom: 200px;">
 		<!-- Sidebar user panel -->
 		<div class="user-panel">
 			<div class="pull-left image">
@@ -36,7 +36,7 @@
 		<!-- sidebar menu: : style can be found in sidebar.less -->
 		<ul class="sidebar-menu">
 			<li class="header">MAIN NAVIGATION</li>
-			<li><a href="#"> <i
+			<li><a href="faces/admin/dashboard_admin.xhtml"> <i
 					class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 					
 			<li><a href="faces/admin/blog_management.xhtml"> <i
@@ -105,11 +105,25 @@
 							class="fa fa-circle-o text-danger"></i> Delete Alumuni <i class="fa fa-minus-square-o text-danger pull-right"></i>
 							</a></li>
 				</ul></li>
-				
-			<li><a href="pages/mailbox/mailbox.html"> <i
+
+
+			<li class="treeview"><a href="#"> <i
+					class="fa fa-envelope"></i> <span>Mailbox</span> <i
+					class="fa fa-angle-left pull-right"></i>
+			</a>
+				<ul class="treeview-menu ">
+					<li class=""><a href="faces/admin/mail_management.xhtml"> Inbox <span
+							class="label label-primary pull-right">13</span>
+					</a></li>
+					<li><a href="faces/admin/compose.xhtml">Compose</a></li>
+					<li><a href="faces/admin/read.xhtml">Read</a></li>
+				</ul></li>
+
+
+			<!-- <li><a href="faces/admin/mail_management.xhtml"> <i
 				class="fa fa-envelope"></i> <span>Mailbox</span> <small
 				class="label pull-right bg-yellow">12</small>
-			</a></li>
+			</a></li> -->
 					
 			<!-- <li class="active treeview"><a href="#"> <i
 					class="fa fa-dashboard"></i> <span>Dashboard</span> <i
