@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/Templates/AdminTemplate.xhtml">
+	<ui:define name="content">
+		<div class="content-wrapper" style="padding-left: 70px;">
+		<h:form id="studentListForm">
+		
+		    &nbsp;
+		    <br/>
+		    <h:commandLink action="#{studentBean.retrieveStudentList('active')}">
+    					<h:graphicImage library="images" name="current.jpg"
+										url="/resources/images" height="40px;" width="250px;"/>
+					</h:commandLink>
+			&nbsp;		
+					<h:commandLink action="#{studentBean.retrieveStudentList('waiting')}">
+    					<h:graphicImage library="images" name="waiting.jpg"
+										url="/resources/images" height="40px;" width="250px;"/>
+					</h:commandLink>
+					&nbsp;
+					<h:commandLink action="#{studentBean.retrieveStudentList('inactive')}">
+    					<h:graphicImage library="images" name="inactive.jpg"
+										url="/resources/images" height="40px;" width="250px;"/>
+					</h:commandLink>
+		    
+					
+					<br/>
+					<h:outputLabel value="#{studentBean.headerStr}"/>
+					<br/>
+					&nbsp;<h:dataTable value="#{studentBean.currentStudList}"
+						var="currStud" border="1" id="curStudListTableId" width="80%">
+						<h:column>
+							<f:facet name="header">Registration Id</f:facet>
+							<h:commandLink
+								value="SB-CHM-#{currStud.registrationId}"
+								onclick="window.open('student_details.xhtml?regId=#{currStud.registrationId}','','width=700,top=100,left=100');"
+								immediate="true">
+								</h:commandLink>
+						</h:column>
+						<h:column>
+							<f:facet name="header">Student Name</f:facet>
+							<h:outputLabel
+								value='#{currStud.firstName} #{currStud.middleName} #{currStud.lastName}' />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Class</f:facet>
+							<h:outputLabel
+								value='XII' />
+						</h:column>
+					</h:dataTable>
+		    
+		   </h:form>
+	    </div>
+	</ui:define>
+</ui:composition>
+</html>

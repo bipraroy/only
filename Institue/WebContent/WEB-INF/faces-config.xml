@@ -13,12 +13,25 @@
 		<managed-bean-class>com.bean.LoginBean</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>studentBean</managed-bean-name>
+		<managed-bean-class>com.bean.StudentBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>studentActivationBean</managed-bean-name>
+		<managed-bean-class>com.bean.StudentActivationBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+
+
 	<navigation-rule>
-	    <display-name>signin</display-name>
+		<display-name>signin</display-name>
 		<from-view-id>/signin.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>admin</from-outcome>
-			<to-view-id>/admin/blog_management.xhtml</to-view-id>
+			<to-view-id>/admin/dashboard_admin.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>student</from-outcome>
@@ -26,11 +39,22 @@
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-	    <display-name>registration.xhtml</display-name>
-	    <from-view-id>/signup.xhtml</from-view-id>
-	    <navigation-case>
-	        <from-outcome>registered</from-outcome>
-	        <to-view-id>/signin.xhtml</to-view-id>
-	     </navigation-case>  
+
+		<display-name>registration.xhtml</display-name>
+		<from-view-id>/signup.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>registered</from-outcome>
+			<to-view-id>/signin.xhtml</to-view-id>
+		</navigation-case>
 	</navigation-rule>
+	<navigation-rule>
+		<display-name>login.xhtml</display-name>
+		<from-view-id>/registration.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>registration sucessfully</from-outcome>
+			<to-view-id>/signin.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
 </faces-config>

@@ -41,7 +41,7 @@ public class LoginBean {
 				System.out.println("Status "+status);
 				if(status.equals("waiting")){
 					System.out.println("Required admin activation");
-				//FacesContext.getCurrentInstance().addMessage(null, new javax.faces.application.FacesMessage(FacesMessage.SEVERITY_ERROR,"Required Admin Activation", null));
+				FacesContext.getCurrentInstance().addMessage(null, new javax.faces.application.FacesMessage(FacesMessage.SEVERITY_ERROR,"Required Admin Activation", null));
 				}else if(status.equals("active"))
 					System.out.println("Succesfully login");
 				else if(status.equals("deactive"))

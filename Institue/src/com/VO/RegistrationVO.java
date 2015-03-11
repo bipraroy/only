@@ -2,12 +2,14 @@ package com.VO;
 
 public class RegistrationVO {
 
+private String registrationId;
 private int userId;
 private String firstName;
 private String middleName;
 private String lastName;
 private String dob;
 private String gurdainName;
+private String gender;
 private int gurdainContactNo;
 private String address;
 private String city;
@@ -174,6 +176,16 @@ public void setConfirmPassword(String confirmPassword) {
 	this.confirmPassword = confirmPassword;
 }
 
+
+
+public String getGender() {
+	return gender;
+}
+
+public void setGender(String gender) {
+	this.gender = gender;
+}
+
 public String toString() {
 	return "RegistrationVO [userId=" + userId + ", firstName=" + firstName +",lastName = "+lastName+ ",dob="+dob+",gurdainName="+gurdainName+","
 			+ ",gurdainContactNo="+gurdainContactNo+",address="+address+",city="+city+",zipCode="+zipCode+","
@@ -183,5 +195,19 @@ public String toString() {
 	
 	
 	
+}
+
+/**
+ * @return the registrationId
+ */
+public String getRegistrationId() {
+	return registrationId;
+}
+
+/**
+ * @param registrationId the registrationId to set
+ */
+public void setRegistrationId(String registrationId) {
+	this.registrationId = registrationId;
 }
 }

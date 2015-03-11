@@ -12,21 +12,22 @@
 		<header id="head" class="secondary"></header>
 
 	<!-- container -->
+	
 	<div class="container">
 
 		<ol class="breadcrumb">
 			<li><a href="index.html">Home</a></li>
 			<li class="active">Registration</li>
 		</ol>
-
+		<h:form>
 		<div class="row">
 			
 			<!-- Article main content -->
-			<article class="col-xs-12 maincontent">
+			<!--  <article class="col-xs-12 maincontent">-->
 				<header class="page-header">
 					<h1 class="page-title">Registration</h1>
 				</header>
-				
+					
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-default">
 						<div class="panel-body">
@@ -34,7 +35,7 @@
 							<p class="text-center text-muted">Enroll here to start technique based study, registered students <a href="signin.html">Login</a> here. Admission is going on in various slots </p>
 							<hr/>
                             <h:messages  globalOnly="true" infoClass="sucess" errorClass="error"></h:messages>
-							<h:form>
+						
 							<div class="row top-margin">
 									<div class="col-sm-4">
 										<h:outputText value="*First Name" /><span class="text-danger"></span>
@@ -139,18 +140,17 @@
 										<h:commandButton value="Save" action="#{registrationBean.createUser}" />
 									</div>
 								</div>
-							</h:form>
+
 						</div>
 					</div>
-
+					
 				</div>
 				
-			</article>
-			<!-- /Article -->
-
+			<!--</article>
+			 /Article -->
+			</h:form>
 		</div>
 	</div>	<!-- /container -->
-	</div>
 	</ui:define>
 </ui:composition>
 </html>
