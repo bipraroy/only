@@ -1,5 +1,8 @@
 package com.bean;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+
 import com.VO.RegistrationVO;
 import com.dao.RegistrationDAO;
 
@@ -27,8 +30,25 @@ public class RegistrationBean {
 
 	public String createUser()
 	{
-		registrationDao.insertStudentProfile(registrationVO);
+		String actionStr=null;
+		if((registrationVO.getFirstName().equals(""))|| (registrationVO.getMiddleName().equals(""))
+				   || (registrationVO.getLastName().equals("")) || (registrationVO.getGurdainName().equals("")) || (registrationVO.getDob().equals(""))
+				   || (registrationVO.getAddress().equals("")) ||  (registrationVO.getCity().equals(""))
+				   || (registrationVO.getZipCode()==0) || (registrationVO.getState().equals("")) || (registrationVO.getCountry().equals(""))
+		           || (registrationVO.getContactNo()==0) || (registrationVO.getGurdainContactNo()==0) || (registrationVO.getLastExamName().equals(""))
+		           || (registrationVO.getLastExamMarks().equals("")) || (registrationVO.getBoardName().equals("")))
+				   {
+			System.out.println("Inside else part");
+			FacesContext.getCurrentInstance().addMessage(null, new javax.faces.application.FacesMessage(FacesMessage.SEVERITY_ERROR,"PLEASE FILLUP ALL MANDATORY FIELD", null));
+				}else{
+					
+					registrationDao.insertStudentProfile(registrationVO);
+					actionStr ="registered";
+				    FacesContext.getCurrentInstance().addMessage(null, new javax.faces.application.FacesMessage(FacesMessage.SEVERITY_INFO,"REGISTRATION SUCCESSFULLY", null));
+				}
+		
+		
 		System.out.println("Registration info : \n\n\n\n-----------"+registrationVO.toString());
-		return null;
+		return actionStr;
 	}
 }

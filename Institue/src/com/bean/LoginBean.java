@@ -2,7 +2,6 @@ package com.bean;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
-
 import com.VO.LoginVO;
 import com.dao.LoginDAO;
 import com.util.User;
@@ -40,9 +39,10 @@ public class LoginBean {
 			{
 				String status = loginDAO.getStudentStatus(user.getStatusId());
 				System.out.println("Status "+status);
-				if(status.equals("waiting"))
+				if(status.equals("waiting")){
 					System.out.println("Required admin activation");
-				else if(status.equals("active"))
+				//FacesContext.getCurrentInstance().addMessage(null, new javax.faces.application.FacesMessage(FacesMessage.SEVERITY_ERROR,"Required Admin Activation", null));
+				}else if(status.equals("active"))
 					System.out.println("Succesfully login");
 				else if(status.equals("deactive"))
 					System.out.println("Currently you are deactive");

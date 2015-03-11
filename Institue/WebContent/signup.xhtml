@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -33,7 +33,7 @@
 							<h3 class="thin text-center">Register a new account</h3>
 							<p class="text-center text-muted">Enroll here to start technique based study, registered students <a href="signin.html">Login</a> here. Admission is going on in various slots </p>
 							<hr/>
-
+                            <h:messages  globalOnly="true" infoClass="sucess" errorClass="error"></h:messages>
 							<h:form>
 							<div class="row top-margin">
 									<div class="col-sm-4">
@@ -48,6 +48,11 @@
 										<h:outputText value="*Last Name"/><span class="text-danger"></span>
 										<h:inputText value="#{registrationBean.registrationVO.lastName}" class="form-control"/>
 									</div>
+								</div>
+								<!-- <div class="top-margin">
+										<h:outputText value="*Gender"/> <span class="text-danger"></span>
+										<h:inputText value="#{registrationBean.registrationVO.gender}" class="form-control"/> -->
+			
 								</div>
 								<div class="top-margin">
 										<h:outputText value="*Date of Birth"/> <span class="text-danger"></span>

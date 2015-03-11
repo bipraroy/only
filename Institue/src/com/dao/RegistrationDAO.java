@@ -28,7 +28,7 @@ public class RegistrationDAO {
 			ps.setString(3,registrationVO.getMiddleName());
 			ps.setString(4,registrationVO.getLastName());
 			ps.setString(5,registrationVO.getGurdainName());
-			ps.setInt(6, registrationVO.getDob());
+			ps.setString(6, registrationVO.getDob());
 			ps.setString(7, registrationVO.getAddress());
 			ps.setString(8, registrationVO.getCity());
 			ps.setInt(9,registrationVO.getZipCode());
@@ -40,7 +40,11 @@ public class RegistrationDAO {
 			ps.setString(15,registrationVO.getLastExamMarks());
 			ps.setString(16,registrationVO.getBoardName());
 			result = ps.executeUpdate();
-			System.out.println("result"+result);
+			if(result!=0)
+				System.out.println("registration sucessesfull saved");
+			else
+				System.out.println("Please fillup all mandetory field");
+			//System.out.println("result"+result);
 	
 		}
 		catch (SQLException e) {

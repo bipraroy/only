@@ -6,7 +6,7 @@ private int userId;
 private String firstName;
 private String middleName;
 private String lastName;
-private int dob;
+private String dob;
 private String gurdainName;
 private int gurdainContactNo;
 private String address;
@@ -54,11 +54,11 @@ public void setLastName(String lastName) {
 	this.lastName = lastName;
 }
 
-public int getDob() {
+public String getDob() {
 	return dob;
 }
 
-public void setDob(int dob) {
+public void setDob(String dob) {
 	this.dob = dob;
 }
 
