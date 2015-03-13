@@ -43,7 +43,10 @@ public class LoginBean {
 					System.out.println("Required admin activation");
 				FacesContext.getCurrentInstance().addMessage(null, new javax.faces.application.FacesMessage(FacesMessage.SEVERITY_ERROR,"Required Admin Activation", null));
 				}else if(status.equals("active"))
+				{
+					actionStr="student";
 					System.out.println("Succesfully login");
+				}
 				else if(status.equals("deactive"))
 					System.out.println("Currently you are deactive");
 			}

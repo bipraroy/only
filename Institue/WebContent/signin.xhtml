@@ -33,12 +33,12 @@
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<h3 class="thin text-center">Sign in to your account</h3>
-							<p class="text-center text-muted">
+							<!-- <p class="text-center text-muted">
 								Login here to start technique based study, unregistered
 								students, <a href="faces/signup.xhtml">Register</a> here.
 							</p>
 							<hr />
-
+ -->
 							<h:form name="loginform" method="post">
 								<div class="top-margin">
 									<h:outputText value="Username/Email" /><span class="text-danger">*</span>
@@ -60,7 +60,7 @@
 										<b><a href="">Forgot password?</a></b>
 									</div>
 									<div class="col-lg-4 text-right">
-										<h:commandButton value="Save" action="#{loginBean.createLogin}" /><br />
+										<h:commandButton value="Login" action="#{loginBean.createLogin}"/><br />
 										 
 									</div>
 								</div>
