@@ -17,7 +17,7 @@
 		<div class="container">
 
 			<ol class="breadcrumb">
-				<li><a href="index.xhtml">Home</a></li>
+				<li><h:link value="Home" outcome="index.xhtml"/></li>
 				<li class="active">User access</li>
 			</ol>
 
@@ -57,7 +57,7 @@
 
 								<div class="row">
 									<div class="col-lg-8">
-										<b><a href="">Forgot password?</a></b>
+										<b><h:link value="Forgot Password" outcome="#"/></b>
 									</div>
 									<div class="col-lg-4 text-right">
 										<h:commandButton value="Save" action="#{loginBean.createLogin}" /><br />
