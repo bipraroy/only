@@ -11,12 +11,12 @@
 	<ui:define name="content">
 	    <body class="home"/>
 	    <header id="head" class="secondary"></header>
-	<div class="container">
+	<!-- <div class="container">
 		<ol class="breadcrumb">
 			<li><h:link value="Student Zone" outcome="#"/></li>
 			<li class="active">Glorious Past</li>
-		</ol>
-<div class="">
+		</ol> -->
+<!-- <div class="">
 <font face="comic-sans" size="6" >
 <p style="text-align: left;"> Gairik Chatterjee- ex IIT Rank holder</p>
 <p style="text-align: right;">Sanchayan Mukherjee- ex IIT Rank holder</p>
@@ -28,10 +28,10 @@
 <p style="text-align: right;">Upamanyu Goswami- 9th Rank in HS 2013<br></br>  NEET.</p>
 <p style="text-align: left;">Sampad Mishra- 86 Rank in W.B.J.E.E.<br></br>(Medical) 2014.</p>
 <p style="text-align: right;">Data to be upgraded<br></br>More to come</p>
-</font>
+</font> -->
 		<div class="row">
 			<ol class="breadcrumb">
-				<li><a href="glorious_past.xhtml">Student Zone</a></li>
+				<li><h:link value="Student Zone" outcome="#"/></li>
 				<li class="active">Glorious Past</li>
 			</ol>
 			<br />		
@@ -174,9 +174,7 @@
 		<br />
 		<div style="float: right">
 			<button class="btn btn-default" onclick="alert('Data yet to be uploaded.....');"> See More...</button>	
-		</div>
-		</div>
-	</div>	<!-- /container -->
+		</div>	<!-- /container -->
 	</ui:define>
 </ui:composition>
 </h:body>
